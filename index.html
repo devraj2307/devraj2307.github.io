@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Raj</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=JetBrains+Mono:wght@400;600&family=Enriqueta:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #6A5ACD;
+            --hover-color: #5A4ABD;
+            --background-color: #FFFFFF;
+            --text-color: #000000;
+            --sidebar-width: 200px;
+            --content-width: 60%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Enriqueta', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            display: flex;
+        }
+
+        .sidebar {
+            width: var(--sidebar-width);
+            height: 100vh;
+            position: fixed;
+            background-color: var(--background-color);
+            border-right: 2px solid var(--primary-color);
+            padding: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .nav-button {
+            display: flex;
+            width: 80%;
+            margin: 1rem auto;
+            padding: 0.8rem;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid var(--primary-color);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            font-family: 'Enriqueta', sans-serif;
+            font-size: 1.1rem;
+        }
+
+        .nav-button:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .main-content {
+            margin-left: calc(var(--sidebar-width) + 4rem);
+            padding: 2rem;
+            width: var(--content-width);
+            max-width: 1000px;
+        }
+
+        h1 {
+            font-family: 'Merriweather', serif;
+            color: var(--primary-color);
+            font-size: 4rem;
+            margin-bottom: 2rem;
+        }
+
+        h2, h3 {
+            font-family: 'Merriweather', serif;
+            color: var(--primary-color);
+        }
+
+        .comic-container {
+            max-width: 600px;
+            margin: 2rem 0;
+        }
+
+        .comic-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .links-section {
+            margin: 2rem 0;
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .social-button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-button:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        footer {
+            margin-top: 2rem;
+            padding: 1rem 0;
+            border-top: 2px solid var(--primary-color);
+            text-align: center;
+        }
+
+        section {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="sidebar">
+        <a href="#home" class="nav-button">Home</a>
+        <a href="#education" class="nav-button">Education</a>
+        <a href="#thoughts" class="nav-button">Thoughts</a>
+        <a href="#newtab" class="nav-button">NewTab</a>
+        <a href="#anothertab" class="nav-button">AnotherTab</a>
+        <a href="#onemoretab" class="nav-button">1MoreTab</a>
+        <a href="#thesetabsdontwork" class="nav-button">!!TheseTabsDontWork!!</a>
+    </nav>
+
+    <main class="main-content">
+        <h1>Dev Raj</h1>
+
+        <section class="about-section">
+            <h2>About</h2>
+            <p>Undergraduate student at IISER Bhopal passionate about theoretical computer science, graph theory, and computational complexity. Currently exploring the intersections of mathematics and computer science while writing programs to calculate factorials.</p>
+        </section>
+        
+        <section class="comic-container">
+            <!-- Replace src with actual comic image -->
+            <img src="https://imgs.xkcd.com/comics/success.png" alt="Comic">
+            <p>Credit:</p> <a href="https://xkcd.com/349">XKCD 349</a>
+        </section>
+
+        <section class="links-section">
+            <h2>Important Links</h2>
+            <ul>
+                <li><a href="https://github.com/devraj2307">GitHub Repositories</a></li>
+                <li><a href="#">Recommended Books</a></li>
+                <li><a href="#">Research Papers</a></li>
+            </ul>
+        </section>
+
+        <section class="social-buttons">
+            <a href="#" class="social-button"><i class="fas fa-rss"></i></a>
+            <a href="mailto:devraj23@iiserb.ac.in" class="social-button"><i class="fas fa-envelope"></i></a>
+            <a href="#" class="social-button"><i class="fab fa-twitter"></i></a>
+            <a href="https://github.com/devraj2307" class="social-button"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-button"><i class="fab fa-gitlab"></i></a>
+            <a href="https://www.linkedin.com/in/dev-raj-iiserb/" class="social-button"><i class="fab fa-linkedin"></i></a>
+        </section>
+
+        <footer>
+            <p>✌️ Peace</p>
+        </footer>
+    </main>
+</body>
+</html>
