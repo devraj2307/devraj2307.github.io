@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Raj</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=JetBrains+Mono:wght@400;600&family=Enriqueta:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #6A5ACD;
+            --hover-color: #5A4ABD;
+            --background-color: #FFFFFF;
+            --text-color: #000000;
+            --sidebar-width: 200px;
+            --content-width: 60%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Enriqueta', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            display: flex;
+        }
+
+        .sidebar {
+            width: var(--sidebar-width);
+            height: 100vh;
+            position: fixed;
+            background-color: var(--background-color);
+            border-right: 2px solid var(--primary-color);
+            padding: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .nav-button {
+            display: flex;
+            width: 80%;
+            margin: 1rem auto;
+            padding: 0.8rem;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid var(--primary-color);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            font-family: 'Enriqueta', sans-serif;
+            font-size: 1.1rem;
+        }
+
+        .nav-button:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .main-content {
+            margin-left: calc(var(--sidebar-width) + 4rem);
+            padding: 2rem;
+            width: var(--content-width);
+            max-width: 1000px;
+        }
+
+        h1 {
+            font-family: 'Merriweather', serif;
+            color: var(--primary-color);
+            font-size: 4rem;
+            margin-bottom: 2rem;
+        }
+
+        h2, h3 {
+            font-family: 'Merriweather', serif;
+            color: var(--primary-color);
+        }
+
+        .education-section, .online-courses {
+            margin-bottom: 3rem;
+            background-color: #f5f5f5;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .education-item, .course-item {
+            border-left: 3px solid var(--primary-color);
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .education-item h3, .course-item h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .education-details {
+            margin: 0.5rem 0;
+        }
+
+        .subjects-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin-right: 200px;
+        }
+
+        .subjects-list li {
+            margin: 0.5rem 0;
+        }
+
+        .meta-info {
+            position: absolute;
+            right: 1rem;
+            top: 0;
+            text-align: right;
+        }
+
+        .meta-info p {
+            margin: 0.5rem 0;
+        }
+
+        .document-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .document-link:hover {
+            color: var(--hover-color);
+        }
+
+        footer {
+            margin-top: 2rem;
+            padding: 1rem 0;
+            border-top: 2px solid var(--primary-color);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="sidebar">
+        <a href="index.html" class="nav-button">Home</a>
+        <a href="academics.html" class="nav-button">Academics</a>
+        <a href="#experience" class="nav-button">Experience</a>
+        <a href="#ramblings" class="nav-button">Ramblings</a>
+        <a href="#contact" class="nav-button">Contact</a>
+        <a href="#anothertab" class="nav-button">AnotherTab</a>
+        <a href="#onemoretab" class="nav-button">1MoreTab</a>
+        <a href="#thesedontwork" class="nav-button">!!TheseDontWork(yet)!!</a>
+    </nav>
+
+    <main class="main-content">
+        <h1>Dev Raj</h1>
+
+        <section class="education-section">
+            <h2>Academic Background</h2>
+            
+            <div class="education-item">
+                <h3>BS-MS Dual Degree Program</h3>
+                <p class="education-details">Indian Institute of Science Education and Research Bhopal</p>
+                <div class="meta-info">
+                    <p>Expected Graduation: 2028</p>
+                    <p>Current CPI: 8.23/10</p>
+                    <a href="https://drive.google.com/file/d/1sQqhZGG8FI3Pyl1P3XVhayM5LS5y8uz8/view?usp=sharing" class="document-link">
+                        <i class="fas fa-file-alt"></i> View Transcript
+                    </a>
+                </div>
+                <h4>Pre-Major Subjects:</h4>
+                <ul class="subjects-list">
+                    <li>Mathematics</li>
+                    <li>Data Science & Engineering</li>
+                    <li>Physics</li>
+                </ul>
+            </div>
+
+            <div class="education-item">
+                <h3>Class XII</h3>
+                <p class="education-details">Central Board of Secondary Education</p>
+                <div class="meta-info">
+                    <p>Year of Completion: 2023</p>
+                    <p>Percentage: 78.67%</p>
+                    <a href="https://drive.google.com/file/d/1RMFcOOZMMbfe6LDpajCw1Pr8M47Tw7Tv/view?usp=sharing" class="document-link">
+                        <i class="fas fa-file-alt"></i> View Marksheet
+                    </a>
+                </div>
+                <h4>Key Subjects:</h4>
+                <ul class="subjects-list">
+                    <li>Mathematics</li>
+                    <li>Physics</li>
+                    <li>Chemistry</li>
+                    <li>English</li>
+                </ul>
+            </div>
+
+            <div class="education-item">
+                <h3>Class X</h3>
+                <p class="education-details">Central Board of Secondary Education</p>
+                <div class="meta-info">
+                    <p>Year of Completion: 2020</p>
+                    <p>Percentage: 93.4%</p>
+                    <a href="https://drive.google.com/file/d/1wF3qfTdRiWrhyNbFXIReMMevBg_XwMBA/view?usp=sharing" class="document-link">
+                        <i class="fas fa-file-alt"></i> View Marksheet
+                    </a>
+                </div>
+                <h4>Key Subjects:</h4>
+                <ul class="subjects-list">
+                    <li>Mathematics</li>
+                    <li>Computer Applications</li>
+                    <li>Science</li>
+                    <li>Social Science</li>
+                    <li>English</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="education-section">
+            <h2>Online Certifications & Courses</h2>
+            
+            <div class="education-item">
+                <h3><a href="https://onlinecourses.nptel.ac.in/noc24_cs79/preview" style="color: var(--primary-color); text-decoration: none;">Design and Analysis of Algorithms</a></h3>
+                <p class="education-details">NPTEL - Indian Institute of Technology, Madras (IITM)</p>
+                <div class="meta-info">
+                    <p>Completed: 2024</p>
+                    <a href="https://drive.google.com/file/d/1gMZptWejb72_iSRKmhVL9AhPfndaEqMF/view?usp=drive_link" class="document-link">
+                        <i class="fas fa-file-alt"></i> View Certificate
+                    </a>
+                </div>
+            </div>
+
+            <div class="education-item">
+                <h3><a href="https://onlinecourses.nptel.ac.in/noc24_cs78/preview" style="color: var(--primary-color); text-decoration: none;">Programming, Data Structures and Algorithms using Python</a></h3>
+                <p class="education-details">NPTEL - Indian Institute of Technology, Madras (IITM)</p>
+                <div class="meta-info">
+                    <p>Completed: 2024</p>
+                    <a href="https://drive.google.com/file/d/1uaWNyXindcYl-PFErZ9KsTSUTyVeFOwk/view?usp=drive_link" class="document-link">
+                        <i class="fas fa-file-alt"></i> View Certificate
+                    </a>
+                </div>
+            </div>
+
+            <div class="education-item">
+                <h3><a href="https://onlinecourses.nptel.ac.in/noc24_cs68/preview" style="color: var(--primary-color); text-decoration: none;">Python for Data Science</a></h3>
+                <p class="education-details">NPTEL - Indian Institute of Technology, Madras (IITM)</p>
+                <div class="meta-info">
+                    <p>Completed: 2024</p>
+                    <a href="https://drive.google.com/file/d/1-1a67bx7kIP3Lm4iTUaAbndCmS5jypKM/view?usp=drive_link" class="document-link">
+                        <i class="fas fa-file-alt"></i> View Certificate
+                    </a>
+                </div>
+            </div>
+
+            <div class="education-item">
+                <h3><a href="https://www.cense.iisc.ac.in/Summerschool/" style="color: var(--primary-color); text-decoration: none;">CeNSE Summer School on Semiconductor Technology and Microfabrication,</a></h3>
+                <p class="education-details">CeNSE, Indian Institute of Science, Bangalore</p>
+                <div class="meta-info">
+                    <p>Completed: 2024</p>
+                    <a href="https://drive.google.com/file/d/16UnBDB_nw_psokPQKX03aDrL1ptw754L/view?usp=drive_link" class="document-link">
+                        <i class="fas fa-file-alt"></i> View Certificate
+                    </a>
+                </div>
+            </div>
+            
+            <div class="education-item">
+                <h3><a href="https://onlinecourses.nptel.ac.in/noc24_ma18/preview" style="color: var(--primary-color); text-decoration: none;">Essentials of Data Science with R Software - 1: Probability and Statistical Inference</a></h3>
+                <p class="education-details">NPTEL - Indian Institute of Technology, Madras (IITM)</p>
+                <div class="meta-info">
+                    <p>Completed: 2024</p>
+                    <a href="https://drive.google.com/file/d/1mx0il0AOVWhiYFE4xYPe9YSKMep8WMQk/view?usp=drive_link" class="document-link">
+                        <i class="fas fa-file-alt"></i> View Certificate
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>✌️ Peace</p>
+        </footer>
+    </main>
+</body>
+</html>
