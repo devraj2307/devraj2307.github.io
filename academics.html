@@ -23,6 +23,37 @@
             background-color: var(--background-color);
             color: var(--text-color);
             display: flex;
+            min-height: 100vh;
+        }
+
+        /* Hamburger Menu Button */
+        .menu-toggle {
+            display: none;
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            z-index: 1000;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        /* Backdrop overlay */
+        .backdrop {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(3px);
+            z-index: 998;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .sidebar {
@@ -36,6 +67,8 @@
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
+            transition: transform 0.3s ease;
+            z-index: 999;
         }
 
         .nav-button {
@@ -140,13 +173,69 @@
             border-top: 2px solid var(--primary-color);
             text-align: center;
         }
+
+        /* Mobile Responsive Styles */
+        @media screen and (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .sidebar {
+                transform: translateX(-100%);
+                width: 80%;
+                max-width: 300px;
+            }
+
+            .sidebar.active {
+                transform: translateX(0);
+            }
+
+            .backdrop.active {
+                display: block;
+                opacity: 1;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 1rem;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+                margin-top: 3rem;
+            }
+
+            .meta-info {
+                position: static;
+                text-align: left;
+                margin-top: 1rem;
+            }
+
+            .subjects-list {
+                margin-right: 0;
+            }
+
+            .education-section, .online-courses {
+                padding: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <nav class="sidebar">
+    <!-- Hamburger Menu Button -->
+    <button class="menu-toggle" aria-label="Toggle navigation menu">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Backdrop Overlay -->
+    <div class="backdrop"></div>
+
+    <nav class="sidebar" role="navigation">
         <a href="index.html" class="nav-button">Home</a>
         <a href="academics.html" class="nav-button">Academics</a>
-        <a href="#experience" class="nav-button">Experience</a>
+        <a href="experience.html" class="nav-button">Experience</a>
         <a href="#ramblings" class="nav-button">Ramblings</a>
         <a href="#contact" class="nav-button">Contact</a>
         <a href="#anothertab" class="nav-button">AnotherTab</a>
@@ -281,5 +370,38 @@
             <p>✌️ Peace</p>
         </footer>
     </main>
+
+    <script>
+        // Mobile menu functionality
+        const menuToggle = document.querySelector('.menu-toggle');
+        const sidebar = document.querySelector('.sidebar');
+        const backdrop = document.querySelector('.backdrop');
+
+        function toggleMenu() {
+            sidebar.classList.toggle('active');
+            backdrop.classList.toggle('active');
+            document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        backdrop.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking navigation links on mobile
+        const navLinks = document.querySelectorAll('.nav-button');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Handle keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+    </script>
 </body>
 </html>

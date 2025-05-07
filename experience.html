@@ -111,43 +111,45 @@
             color: var(--primary-color);
         }
 
-        .comic-container {
-            max-width: 600px;
-            margin: 2rem 0;
-        }
-
-        .comic-container img {
-            width: 100%;
+        .experience-section {
+            margin-bottom: 3rem;
+            background-color: #f5f5f5;
+            padding: 1.5rem;
             border-radius: 8px;
         }
 
-        .links-section {
-            margin: 2rem 0;
+        .experience-item {
+            border-left: 3px solid var(--primary-color);
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+            position: relative;
         }
 
-        .social-buttons {
-            display: flex;
-            gap: 1rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
+        .experience-item h3 {
+            margin-bottom: 0.5rem;
         }
 
-        .social-button {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 2px solid var(--primary-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: all 0.3s ease;
+        .experience-details {
+            margin: 0.5rem 0;
         }
 
-        .social-button:hover {
-            background-color: var(--primary-color);
-            color: white;
+        .experience-meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .experience-description {
+            margin-top: 1rem;
+        }
+
+        .experience-description ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
+
+        .experience-description li {
+            margin: 0.5rem 0;
         }
 
         footer {
@@ -155,16 +157,6 @@
             padding: 1rem 0;
             border-top: 2px solid var(--primary-color);
             text-align: center;
-        }
-
-        section {
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        section:last-of-type {
-            border-bottom: none;
         }
 
         /* Mobile Responsive Styles */
@@ -200,26 +192,25 @@
                 margin-top: 3rem;
             }
 
-            .comic-container {
-                width: 100%;
+            .experience-item {
+                padding-left: 1rem;
             }
 
-            .social-buttons {
-                justify-content: center;
+            .nav-button {
+                font-size: 1rem;
+                padding: 0.6rem;
             }
         }
     </style>
 </head>
 <body>
     <!-- Hamburger Menu Button -->
-    <button class="menu-toggle" aria-label="Toggle navigation menu">
-        <i class="fas fa-bars"></i>
-    </button>
-
-    <!-- Backdrop overlay -->
+    <button class="menu-toggle" aria-label="Toggle navigation menu">☰</button>
+    
+    <!-- Backdrop Overlay -->
     <div class="backdrop" aria-hidden="true"></div>
 
-    <nav class="sidebar" role="navigation">
+    <nav class="sidebar" role="navigation" aria-label="Main navigation">
         <a href="index.html" class="nav-button">Home</a>
         <a href="academics.html" class="nav-button">Academics</a>
         <a href="experience.html" class="nav-button">Experience</a>
@@ -233,32 +224,67 @@
     <main class="main-content">
         <h1>Dev Raj</h1>
 
-        <section class="about-section">
-            <h2>About</h2>
-            <p>Undergraduate student at Indian Institute of Science Education and Research Bhopal <a href="https://www.iiserb.ac.in" class="button-link">(IISERB)</a> passionate about theoretical computer science, graph theory, and computational complexity. Currently exploring the intersections of mathematics and computer science while writing programs to calculate factorials.</p>
-        </section>
-        
-        <section class="comic-container">
-            <img src="https://imgs.xkcd.com/comics/success.png" alt="Comic">
-            <p>Credit: <a href="https://xkcd.com/349">XKCD 349</a></p>
-        </section>
+        <section class="experience-section">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <h3>Freelance Independent Contractor</h3>
+                <p class="experience-details">Chegg India Pvt. Ltd.</p>
+                <div class="experience-meta">
+                    <p>New Delhi, India | April 2024 - Present</p>
+                    <a href="https://drive.google.com/file/d/1isqIMctFMDkn2WGg92HaG0lqgDbs75Do/view?usp=sharing" class="document-link">
+                        <i class="fas fa-file-alt"></i> View Certificate
+                    </a>
+                </div>
+                <div class="experience-description">
+                    <ul>
+                        <li>Authored step-by-step solutions to complex problems in advanced physics, ensuring clarity and accuracy for student understanding.</li>
+                        <li>Managed a consistent workload of assignments while adhering to strict quality standards and deadlines.</li>
+                        <li>Collaborated with peers in the subject matter to maintain a repository of high-quality solutions.</li>
+                        <li>Enhanced subject knowledge by researching new topics and staying updated with recent advancements in the field.</li>
+                    </ul>
+                </div>
+            </div>
 
-        <section class="links-section">
-            <h2>Important Links</h2>
-            <ul>
-                <li><a href="https://github.com/devraj2307">GitHub Repositories</a></li>
-                <li><a href="#">Recommended Books</a></li>
-                <li><a href="#">Research Papers</a></li>
-            </ul>
-        </section>
+            <div class="experience-item">
+                <h3>Summer Research Intern</h3>
+                <p class="experience-details">Miranda House, University of Delhi</p>
+                <div class="experience-meta">
+                    <p>New Delhi, India | June 2024 - July 2024</p>
+                    <a href="https://drive.google.com/file/d/1sQqhZGG8FI3Pyl1P3XVhayM5LS5y8uz8/view?usp=sharing" class="document-link">
+                        <i class="fas fa-file-alt"></i> View Certificate
+                    </a>
+                </div>
+                <div class="experience-description">
+                    <ul>
+                        <li>Utilized RF Magnetron Sputtering to create high-quality Ga2O3 thin films on 3 different substrates at 4 different substrate temperatures each for solar blind UV detector application.</li>
+                        <li>Analyzed deposited thin films using X-ray diffraction at Department of Physics, University of Delhi to determine the lattice parameters and properties like stress and strain of the films.</li>
+                        <li>Employed PANalytical HighScore Plus, to analyze the X-ray diffraction data from Rf sputtered β-Ga2O3 films.</li>
+                        <li>Performed UV-Visible Spectroscopy in the transmission mode to find the transmission curve of the films in the 200nm to 1100nm range.</li>
+                        <li>Utilized Origin Pro to evaluate the urbach energy and bandgap energy of the films by plotting the UV-Vis data and linear fitting using the Tauc Plot method.</li>
+                    </ul>
+                </div>
+                <p style="margin-top: 1rem;">If you're interested in learning more about my work during this internship, you can download and read the detailed project report here:</p>
+                <a href="report.pdf" class="document-link" style="margin-top: 0.5rem;">
+                    <i class="fas fa-file-download"></i> Download
+                </a>
+            </div>
 
-        <section class="social-buttons">
-            <a href="#" class="social-button"><i class="fas fa-rss"></i></a>
-            <a href="mailto:devraj23@iiserb.ac.in" class="social-button"><i class="fas fa-envelope"></i></a>
-            <a href="#" class="social-button"><i class="fab fa-twitter"></i></a>
-            <a href="https://github.com/devraj2307" class="social-button"><i class="fab fa-github"></i></a>
-            <a href="#" class="social-button"><i class="fab fa-gitlab"></i></a>
-            <a href="https://www.linkedin.com/in/dev-raj-iiserb/" class="social-button"><i class="fab fa-linkedin"></i></a>
+            <div class="experience-item">
+                <h3>Tutor (Pro Bono)</h3>
+                <p class="experience-details">Samagra Pragati Primary School</p>
+                <div class="experience-meta">
+                    <p>Sitapur, India | August 2020 - February 2021</p>
+                </div>
+                <div class="experience-description">
+                    <ul>
+                        <li>Taught Mathematics and Science to underprivileged students up to 5th grade in Hindi medium, ensuring concepts were understood through relatable examples.</li>
+                        <li>Organized interactive learning sessions to encourage curiosity and active participation among students.</li>
+                        <li>Gained experience in adapting teaching methodologies to cater to students with varied learning paces.</li>
+                        <li>Offered mentorship and career advice to students, helping them envision and plan future academic goals.</li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
         <footer>
