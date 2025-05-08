@@ -39,6 +39,14 @@
             color: var(--primary-color);
             cursor: pointer;
             padding: 0.5rem;
+            transition: all 0.3s ease;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .menu-toggle.hide {
+            transform: translateY(-100%);
+            opacity: 0;
         }
 
         /* Backdrop overlay */
@@ -401,6 +409,20 @@
             if (e.key === 'Escape' && sidebar.classList.contains('active')) {
                 toggleMenu();
             }
+        });
+
+        // Handle scroll behavior for menu toggle button
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            if (currentScroll > lastScrollTop) {
+                // Scrolling down
+                menuToggle.classList.add('hide');
+            } else {
+                // Scrolling up
+                menuToggle.classList.remove('hide');
+            }
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
         });
     </script>
 </body>
